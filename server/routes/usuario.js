@@ -75,7 +75,7 @@ app.get('/usuario', verificaToken, function (req, res) {
       let id = req.params.id;
 
       //Usuario.findByIdAndRemove(id, (err, userDB) => {
-    Usuario.findByIdAndUpdate(id, { estado: false }, { new: true }, (err, userDB) => {
+    Usuario.findByIdAndRemove(id, (err, userDB) => {
         if (err) {
             return res.status(400).json({
                 ok: false,

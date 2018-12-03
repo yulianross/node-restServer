@@ -16,8 +16,8 @@ app.use(require('./routes/index'));
 // habilitar el public
 app.use(express.static(path.resolve(__dirname, '../public')));
  
-
-mongoose.connect(process.env.URLDB, (err, res) => {
+ 
+mongoose.connect(process.env.URLDB, { useCreateIndex: true }, (err, res) => {
     if (err) throw err;
     console.log('base de dato ONLINE');
 });
